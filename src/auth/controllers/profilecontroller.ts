@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post , UseGuards} from '@nestjs/common';
 import { UserProfileDto } from '../dto/userprofile.dto';
-import { ProfileService } from '../services/ProfileService.1';
+import { ProfileService } from '../services/ProfileService';
 import { AuthGuard } from '@nestjs/passport';
 
 
