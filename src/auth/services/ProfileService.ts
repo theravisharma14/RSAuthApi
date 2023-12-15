@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable , BadRequestException, NotFoundException} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { UserProfileDto } from '../dto/userprofile.dto';
@@ -42,13 +42,12 @@ export class ProfileService {
   }
 
   async updateUserProfile(userProfileDto: UserProfileDto): Promise<{ message: string; }> {
-    // const filter ={user userProfileDto.User_Name};
 
     const user = await this.userModel.findOneAndUpdate({ userName: userProfileDto.userName }, userProfileDto, {
       new: true
     })
     if (!user) {
-
+      throw new BadRequestException('Something bad happened', { cause: new Error(), description: 'user not foud for this. ( '+userProfileDto.userName+' )' })
     }
     return { message: "updated" }
   }
