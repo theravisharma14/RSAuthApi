@@ -7,43 +7,43 @@ import { Document } from 'mongoose';
 export class UserProfile  {
 
   @Prop()
-  readonly User_Name: string;
+  readonly userName: string;
 
   @Prop()
-  readonly First_Name: string;
+  readonly firstName: string;
 
   @Prop()
-  readonly Middle_name: string;
+  readonly middleName: string;
 
   @Prop()
-  readonly Last_Name: string;
+  readonly lastName: string;
 
   @Prop()
-  readonly Email: string;
+  readonly email: string;
 
   @Prop()
-  readonly Mobile : string;
+  readonly mobile : string;
 
   @Prop()
-  readonly Address_1: string;
+  readonly address1: string;
 
   @Prop()
-  readonly Address_2: string;
+  readonly address2: string;
 
   @Prop()
-  readonly LandMark: string;
+  readonly landMark: string;
 
   @Prop()
-  readonly Zip: string;
+  readonly zip: string;
 
   @Prop()
-  readonly State: string;
+  readonly state: string;
 
   @Prop()
-  readonly Region: string;
+  readonly region: string;
   
   @Prop()
-  readonly User_Type: string;
+  readonly userType: string;
 
 }
 

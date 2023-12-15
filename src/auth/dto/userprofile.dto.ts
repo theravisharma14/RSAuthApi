@@ -7,60 +7,60 @@ export class UserProfileDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  readonly User_Name: string;
+  readonly userName: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  readonly First_Name: string;
+  readonly firstName: string;
 
   @ApiProperty()
   @IsString()
-  readonly Middle_name: string;
+  readonly middleName: string;
 
   @ApiProperty()
   @IsString()
-  readonly Last_Name : string;
+  readonly lastName : string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsEmail({}, { message: 'Please enter correct email' })
-  readonly Email: string;
+  readonly email: string;
 
   @ApiProperty()
   @IsNotEmpty()
-  readonly Mobile: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  readonly Address_1: string;
-
-  @ApiProperty()
-  @IsString()
-  readonly Address_2: string;
-
-  @ApiProperty()
-  @IsString()
-  readonly LandMark: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  readonly Zip: string;
-
-  @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  readonly State: string;
-
-  @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  readonly Region: string;
+  readonly mobile: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  readonly User_Type: string;
+  readonly address1: string;
+
+  @ApiProperty()
+  @IsString()
+  readonly address2: string;
+
+  @ApiProperty()
+  @IsString()
+  readonly landMark: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  readonly zip: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  readonly state: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  readonly region: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  readonly userType: string;
 
 }

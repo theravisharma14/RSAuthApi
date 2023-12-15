@@ -15,43 +15,43 @@ export class ProfileService {
   ) { }
 
   async createProfile(userProfileDto: UserProfileDto): Promise<{ message: string; }> {
-    const { User_Name, First_Name, Middle_name, Last_Name, Email, Mobile, Address_1, Address_2, LandMark, Zip, State, Region, User_Type } = userProfileDto;
+    const { userName, firstName, middleName, lastName, email, mobile, address1, address2, landMark, zip, state, region, userType } = userProfileDto;
     await this.userModel.create({
-      User_Name,
-      First_Name,
-      Middle_name,
-      Last_Name,
-      Email,
-      Mobile,
-      Address_1,
-      Address_2,
-      LandMark,
-      Zip,
-      State,
-      Region,
-      User_Type
+      userName,
+      firstName,
+      middleName,
+      lastName,
+      email,
+      mobile,
+      address1,
+      address2,
+      landMark,
+      zip,
+      state,
+      region,
+      userType
     });
     return { message: "You profile is created successfully" };
   }
 
-  async getUserProfile(User_Name: string): Promise<{ userProfileDto: UserProfileDto; }> {
+  async getUserProfile(userName: string): Promise<{ userProfileDto: UserProfileDto; }> {
 
-    const user = await this.userModel.findOne({ User_Name });
+    const user = await this.userModel.findOne({ userName });
 
-    return { userProfileDto : user };
+    return { userProfileDto: user };
   }
 
   async updateUserProfile(userProfileDto: UserProfileDto): Promise<{ message: string; }> {
-    const user_name = userProfileDto.User_Name;
-    const user = await this.userModel.findOne({ user_name });
-    if (user !== null) {
-      await this.userModel.updateOne(user.Address_1
+    // const filter ={user userProfileDto.User_Name};
 
-      );
+    const user = await this.userModel.findOneAndUpdate({ userName: userProfileDto.userName }, userProfileDto, {
+      new: true
+    })
+    if (!user) {
+
     }
-
-
-    return { message: "update successfully" };
+    return { message: "updated" }
   }
+
 
 }
