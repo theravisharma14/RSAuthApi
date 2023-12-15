@@ -38,14 +38,14 @@ export class ProfileService {
 
     const user = await this.userModel.findOne({ User_Name });
 
-    return { userProfileDto: user };
+    return { userProfileDto : user };
   }
 
   async updateUserProfile(userProfileDto: UserProfileDto): Promise<{ message: string; }> {
     const user_name = userProfileDto.User_Name;
     const user = await this.userModel.findOne({ user_name });
     if (user !== null) {
-      await testhis.userModel.updateOne(user.Address_1
+      await this.userModel.updateOne(user.Address_1
 
       );
     }
